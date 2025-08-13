@@ -25,6 +25,10 @@
             background-color: var(--primary-color);
             color: var(--text-light);
         }
+        .sidebar-header {
+            background-color: #000000; /* Black background */
+            color: #FFFFFF; /* White text */
+        }
         .tab-link {
             transition: all 0.3s ease;
             border-left: 4px solid transparent;
@@ -69,20 +73,29 @@
             font-weight: 600;
             transition: all 0.3s ease;
             text-decoration: none;
-        }
-        .btn-primary {
-            background-color: var(--primary-color);
             color: var(--text-light);
         }
-        .btn-primary:hover {
-            background-color: #283593; /* Darker Indigo */
-        }
+        .btn-indigo { background-color: #3f51b5; } .btn-indigo:hover { background-color: #303f9f; }
+        .btn-teal { background-color: #009688; } .btn-teal:hover { background-color: #00796b; }
+        .btn-orange { background-color: #f57c00; } .btn-orange:hover { background-color: #e65100; }
+        .btn-purple { background-color: #8e24aa; } .btn-purple:hover { background-color: #6a1b9a; }
+        .btn-red { background-color: #d32f2f; } .btn-red:hover { background-color: #c62828; }
+        .btn-green { background-color: #388e3c; } .btn-green:hover { background-color: #2e7d32; }
+        .btn-blue { background-color: #1976d2; } .btn-blue:hover { background-color: #1565c0; }
+        .btn-pink { background-color: #d81b60; } .btn-pink:hover { background-color: #c2185b; }
+        
         .info-box {
             border-left: 4px solid var(--accent-color);
             background-color: #fffbeb; /* Amber 50 */
             padding: 1rem;
             border-radius: 0.5rem;
             margin-bottom: 1.5rem;
+        }
+        .module-box {
+            border: 1px solid #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            background-color: #fafbff;
         }
     </style>
 </head>
@@ -91,7 +104,7 @@
     <div class="flex flex-col md:flex-row min-h-screen">
         <!-- Sidebar Navigation -->
         <aside class="w-full md:w-72 sidebar flex-shrink-0">
-            <div class="p-6 text-center">
+            <div class="p-6 text-center sidebar-header">
                 <h1 class="text-3xl font-bold">Portal Modul ASK</h1>
                 <p class="text-sm text-slate-300 mt-1">Jabatan Pendidikan Negeri Pahang</p>
             </div>
@@ -120,7 +133,6 @@
                             <source src="assets/video-pengenalan.mp4" type="video/mp4">
                             Pelayar anda tidak menyokong tag video.
                         </video>
-                        <p class="text-sm text-gray-500 mt-2">Pastikan fail video 'video-pengenalan.mp4' berada dalam folder 'assets'.</p>
                     </div>
                     <p class="mt-6 text-gray-600">Dengan adanya bahan-bahan yang disusun rapi di sini, kami berharap ia dapat menjadi sumber rujukan yang berguna dan memudahkan proses pengajaran dan pembelajaran (PdP) di dalam kelas. Selamat meneroka!</p>
                 </div>
@@ -133,28 +145,40 @@
 
                 <!-- Bahan Modul Content -->
                 <div id="bahan-modul" class="content-panel card">
-                    <h2 class="text-3xl font-bold mb-6 text-gray-800">Bahan Modul & Contoh Fail</h2>
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">Bahan Modul & Rujukan</h2>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                         <!-- Modul Pembelajaran Box -->
-                        <div class="border border-gray-200 p-6 rounded-lg">
+                        <div class="module-box">
                             <h3 class="text-xl font-semibold mb-4 text-center text-primary-color">Modul Pembelajaran</h3>
                             <div class="space-y-4">
-                                <a href="#" class="btn btn-primary w-full"><i class="fas fa-code mr-3"></i>Muat Turun Modul HTML</a>
-                                <a href="#" class="btn btn-primary w-full"><i class="fab fa-python mr-3"></i>Muat Turun Modul Python</a>
-                                <a href="#" class="btn btn-primary w-full"><i class="fas fa-cat mr-3"></i>Muat Turun Modul Scratch</a>
-                                <a href="#" class="btn btn-primary w-full"><i class="fas fa-sitemap mr-3"></i>Muat Turun Nota Struktur Kawalan</a>
+                                <a href="https://drive.google.com/file/d/1x_pieaRFXxu9r1USewu2Io2P-bpt3S8N/view?usp=drive_link" target="_blank" class="btn btn-indigo w-full"><i class="fas fa-code mr-3"></i>Modul HTML</a>
+                                <a href="https://drive.google.com/file/d/1_uhddjigqn-1lTA_sbcioeReiWlhjSVG/view?usp=drive_link" target="_blank" class="btn btn-teal w-full"><i class="fab fa-python mr-3"></i>Modul Python</a>
+                                <a href="https://drive.google.com/file/d/13avO52_L7uu4x0w_b8Rej8iDSMJWYoAk/view?usp=drive_link" target="_blank" class="btn btn-orange w-full"><i class="fas fa-cat mr-3"></i>Modul Scratch</a>
+                                <a href="https://drive.google.com/file/d/1MpmwKeBuwT1469D1HW9qY8FTLqZSTflk/view?usp=drive_link" target="_blank" class="btn btn-purple w-full"><i class="fas fa-sitemap mr-3"></i>Nota Struktur Kawalan</a>
                             </div>
                         </div>
-                        <!-- Contoh Fail Scratch Box -->
-                        <div class="border border-gray-200 p-6 rounded-lg">
-                            <h3 class="text-xl font-semibold mb-4 text-center text-primary-color">Contoh Fail Latihan Scratch</h3>
-                            <div class="grid grid-cols-2 gap-4">
-                                <a href="#" class="btn btn-primary"><i class="fas fa-download mr-2"></i>Latihan 1</a>
-                                <a href="#" class="btn btn-primary"><i class="fas fa-download mr-2"></i>Latihan 2</a>
-                                <a href="#" class="btn btn-primary"><i class="fas fa-download mr-2"></i>Latihan 3</a>
-                                <a href="#" class="btn btn-primary"><i class="fas fa-download mr-2"></i>Latihan 4</a>
-                                <a href="#" class="btn btn-primary"><i class="fas fa-download mr-2"></i>Latihan 5</a>
-                                <a href="#" class="btn btn-primary"><i class="fas fa-download mr-2"></i>Latihan 6</a>
+                        <!-- Fail Contoh Scratch Box -->
+                        <div class="module-box">
+                            <h3 class="text-xl font-semibold mb-4 text-center text-primary-color">Fail Contoh Scratch</h3>
+                            <div class="text-sm text-gray-600 mb-4 info-box !p-3 !mb-3">
+                                <p><strong>Panduan:</strong> Muat turun fail `.sb3` di bawah. Kemudian, layari <a href="https://scratch.mit.edu/projects/editor/" target="_blank" class="font-bold text-indigo-600 hover:underline">laman web Scratch</a>, klik `Fail > Muat naik dari komputer anda` untuk membuka dan menjalankan contoh.</p>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3">
+                                <a href="https://drive.google.com/file/d/1VOqQno3kiN-eWqBomgvTSvZ6jlzqVnPW/view?usp=drive_link" target="_blank" class="btn btn-red"><i class="fas fa-download mr-2"></i>Jujukan</a>
+                                <a href="https://drive.google.com/file/d/1fq5PKbIOSNsa3k1MSnDgAUwKPo6XcUFY/view?usp=drive_link" target="_blank" class="btn btn-green"><i class="fas fa-download mr-2"></i>Pilihan</a>
+                                <a href="https://drive.google.com/file/d/1xcHUSFR6yR95pBrSzBqCXyS_8zzcKX7f/view?usp=drive_link" target="_blank" class="btn btn-blue"><i class="fas fa-download mr-2"></i>Pelbagai Pilihan</a>
+                                <a href="https://drive.google.com/file/d/1WNp4brWuz-5AmcXmeMrKYFfaKfrO-ywt/view?usp=drive_link" target="_blank" class="btn btn-pink"><i class="fas fa-download mr-2"></i>Ulangan For</a>
+                                <a href="https://drive.google.com/file/d/13evt_KMxNCLlGEVLWSw8GxSrH6q1VwvR/view?usp=drive_link" target="_blank" class="btn btn-orange"><i class="fas fa-download mr-2"></i>Ulangan While</a>
+                                <a href="https://drive.google.com/file/d/1kny5W9nkIEDi-v3RK5gs2TdIoamFQhuV/view?usp=drive_link" target="_blank" class="btn btn-purple"><i class="fas fa-download mr-2"></i>Pilihan Bersarang</a>
+                            </div>
+                        </div>
+                         <!-- DSKP ASK Box -->
+                        <div class="module-box">
+                            <h3 class="text-xl font-semibold mb-4 text-center text-primary-color">DSKP ASK</h3>
+                             <div class="space-y-4">
+                                <a href="https://drive.google.com/file/d/1zLRvgjUSddDsFDXsX2sob-eoImZokMSr/view?usp=drive_link" target="_blank" class="btn btn-indigo w-full"><i class="fas fa-book mr-3"></i>Tingkatan 1</a>
+                                <a href="https://drive.google.com/file/d/1sIYidfe8bhbnWFlt0rS3U8nEEzrP_yvw/view?usp=drive_link" target="_blank" class="btn btn-teal w-full"><i class="fas fa-book mr-3"></i>Tingkatan 2</a>
+                                <a href="https://drive.google.com/file/d/1uZSdjXhsckFa-12CkcjpqlpPB32a0y0A/view?usp=drive_link" target="_blank" class="btn btn-orange w-full"><i class="fas fa-book mr-3"></i>Tingkatan 3</a>
                             </div>
                         </div>
                     </div>
@@ -184,7 +208,7 @@
                 objective: 'Mempelajari cara menggunakan tag asas HTML seperti `<head>`, `<body>`, `<h1>`, `<p>`, `<img>`, dan `<a>` untuk menyusun halaman web ringkas yang mengandungi teks, imej dan pautan.',
                 analogy: 'Membina laman web dengan HTML adalah seperti membina rangka rumah. HTML menyediakan struktur asas (dinding, bumbung, pintu), manakala teknologi lain seperti CSS (cat dan perabot) menjadikannya kelihatan menarik.',
                 guide: 'Mulakan dengan templat asas (`<!DOCTYPE html>...`), tambah kandungan di dalam tag `<body>`, dan simpan fail dengan sambungan `.html` untuk melihatnya dalam pelayar web. Cuba ubah suai kandungan untuk melihat kesannya secara langsung.',
-                fileUrl: '#' // Replace with your Google Drive link for HTML PDF
+                fileUrl: 'https://drive.google.com/file/d/1x_pieaRFXxu9r1USewu2Io2P-bpt3S8N/view?usp=drive_link'
             },
             python: {
                 title: 'Modul Pengaturcaraan Python',
@@ -192,7 +216,7 @@
                 objective: 'Memahami pembolehubah, jenis data dan struktur kawalan (pilihan dan ulangan) untuk menulis atur cara ringkas yang boleh membuat keputusan dan melaksanakan tugasan berulang.',
                 analogy: 'Belajar Python adalah seperti belajar resipi. Anda mempunyai bahan-bahan (pembolehubah, data), dan satu set arahan (kod) yang anda ikuti langkah demi langkah untuk mendapatkan hidangan akhir (output program).',
                 guide: 'Gunakan editor dalam talian atau pasang Python secara tempatan. Tulis kod dalam fail yang berakhir dengan `.py`. Fokus pada pemahaman aliran kawalan dan cara menyelesaikan masalah secara logik sebelum menulis kod.',
-                fileUrl: '#' // Replace with your Google Drive link for Python PDF
+                fileUrl: 'https://drive.google.com/file/d/1_uhddjigqn-1lTA_sbcioeReiWlhjSVG/view?usp=drive_link'
             },
             scratch: {
                 title: 'Tutorial Penuh Scratch',
@@ -200,7 +224,7 @@
                 objective: 'Mempelajari asas logik pengaturcaraan, seperti jujukan, gelung, dan bersyarat, dalam persekitaran visual dan interaktif tanpa perlu risau tentang sintaks yang kompleks.',
                 analogy: 'Menggunakan Scratch adalah seperti bermain dengan blok LEGO. Setiap blok mempunyai fungsi tertentu, dan anda menggabungkannya dalam pelbagai cara untuk membina ciptaan yang kompleks. Tiada cara yang "salah" untuk bermula!',
                 guide: 'Layari laman web Scratch. Seret blok dari palet ke kawasan skrip. Eksperimen dengan menggabungkan blok yang berbeza untuk melihat apa yang berlaku. Klik bendera hijau untuk menjalankan projek anda.',
-                fileUrl: '#' // Replace with your Google Drive link for Scratch PDF
+                fileUrl: 'https://drive.google.com/file/d/13avO52_L7uu4x0w_b8Rej8iDSMJWYoAk/view?usp=drive_link'
             },
             'struktur-kawalan': {
                 title: 'Nota Struktur Kawalan',
@@ -208,7 +232,7 @@
                 objective: 'Belajar untuk mengenal pasti dan menggunakan struktur jujukan, pilihan (if, if-else), dan ulangan (for, while) untuk mencipta atur cara yang boleh mengendalikan senario dan data yang berbeza dengan cekap.',
                 analogy: 'Struktur kawalan adalah seperti isyarat lalu lintas untuk atur cara anda. Jujukan ialah lampu hijau (terus jalan). Pilihan ialah simpang jalan (pilih kiri atau kanan berdasarkan papan tanda). Ulangan ialah bulatan (pusing sehingga anda sampai ke simpang keluar).',
                 guide: 'Visualisasikan masalah dengan carta alir terlebih dahulu. Ini membantu dalam memilih struktur kawalan yang betul sama ada anda perlu membuat pilihan atau mengulangi sesuatu tindakan.',
-                fileUrl: '#' // Replace with your Google Drive link for Control Structure PDF
+                fileUrl: 'https://drive.google.com/file/d/1MpmwKeBuwT1469D1HW9qY8FTLqZSTflk/view?usp=drive_link'
             }
         };
 
@@ -241,10 +265,9 @@
                 </div>
 
                 <div class="text-center mt-8">
-                    <a href="${module.fileUrl}" class="btn btn-primary" target="_blank">
+                    <a href="${module.fileUrl}" class="btn btn-indigo" target="_blank">
                         <i class="fas fa-file-pdf mr-3"></i> Buka Fail Penuh Modul
                     </a>
-                    <p class="text-sm text-gray-500 mt-2">Sila gantikan pautan butang ini dengan URL Google Drive anda.</p>
                 </div>
             `;
         }
