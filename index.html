@@ -97,6 +97,20 @@
             border-radius: 0.75rem;
             background-color: #fafbff;
         }
+        .info-box ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .info-box li {
+            margin-bottom: 0.5rem;
+        }
+        .info-box code {
+            background-color: #e2e8f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #c0392b;
+        }
     </style>
 </head>
 <body>
@@ -204,10 +218,10 @@
         const modules = {
             html: {
                 title: 'Modul Pembangunan Laman Web HTML',
-                summary: 'HTML ialah bahasa penanda standard untuk mencipta halaman web. Ia menerangkan struktur halaman web menggunakan elemen yang diwakili oleh tag. Ia adalah tulang belakang kepada setiap laman web yang anda lawati.',
-                objective: 'Mempelajari cara menggunakan tag asas HTML seperti `<head>`, `<body>`, `<h1>`, `<p>`, `<img>`, dan `<a>` untuk menyusun halaman web ringkas yang mengandungi teks, imej dan pautan.',
-                analogy: 'Membina laman web dengan HTML adalah seperti membina rangka rumah. HTML menyediakan struktur asas (dinding, bumbung, pintu), manakala teknologi lain seperti CSS (cat dan perabot) menjadikannya kelihatan menarik.',
-                guide: 'Mulakan dengan templat asas (`<!DOCTYPE html>...`), tambah kandungan di dalam tag `<body>`, dan simpan fail dengan sambungan `.html` untuk melihatnya dalam pelayar web. Cuba ubah suai kandungan untuk melihat kesannya secara langsung.',
+                summary: "HTML adalah asas kepada semua laman web. Ia seperti 'tulang rangka' yang memberikan struktur dan susun atur kepada kandungan seperti teks, imej, dan video. Dengan menguasai HTML, anda memegang kunci untuk membina dan memahami dunia digital.",
+                objective: "Selepas modul ini, anda akan dapat:<ul><li class='flex items-center'><i class='fas fa-check-circle text-green-500 mr-2'></i>Mengenal dan menulis tag HTML asas.</li><li class='flex items-center'><i class='fas fa-check-circle text-green-500 mr-2'></i>Membina struktur asas halaman web menggunakan tag seperti <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, dan <code>&lt;body&gt;</code>.</li><li class='flex items-center'><i class='fas fa-check-circle text-green-500 mr-2'></i>Menambah kandungan seperti tajuk (<code>&lt;h1&gt;</code>), perenggan (<code>&lt;p&gt;</code>), imej (<code>&lt;img&gt;</code>), dan pautan (<code>&lt;a&gt;</code>).</li></ul>",
+                analogy: "Bayangkan anda seorang arkitek. <strong>HTML</strong> ialah pelan biru dan rangka bangunan anda. Ia menentukan di mana letaknya bilik (seksyen), pintu (pautan), dan tingkap (imej). Tanpa rangka ini, bangunan tidak boleh berdiri. <strong>CSS</strong> pula adalah hiasan dalaman—cat, perabot, dan langsir—yang mencantikkan bangunan tersebut.",
+                guide: "<strong>1. Guna Editor Teks:</strong> Mulakan dengan mana-mana editor teks (seperti Notepad atau VS Code).<br><strong>2. Templat Asas:</strong> Tulis struktur asas HTML.<br><strong>3. Tambah Kandungan:</strong> Letakkan teks dan tag anda di dalam `<body>`.<br><strong>4. Simpan & Lihat:</strong> Simpan fail dengan nama `latihan.html` dan buka ia menggunakan pelayar web (Chrome, Firefox) untuk melihat hasilnya serta-merta!",
                 fileUrl: 'https://drive.google.com/file/d/1x_pieaRFXxu9r1USewu2Io2P-bpt3S8N/view?usp=drive_link'
             },
             python: {
@@ -251,7 +265,7 @@
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
                     <div class="info-box">
                         <h3 class="font-bold text-lg mb-2 text-gray-700">Objektif Pembelajaran</h3>
-                        <p class="text-gray-600">${module.objective}</p>
+                        <div class="text-gray-600">${module.objective}</div>
                     </div>
                     <div class="info-box">
                         <h3 class="font-bold text-lg mb-2 text-gray-700">Analogi</h3>
