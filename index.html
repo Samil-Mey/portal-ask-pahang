@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Modul ASK - Jabatan Pendidikan Negeri Pahang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a237e; /* Deep Indigo */
+            --secondary-color: #f1f5f9; /* Slate 100 */
+            --accent-color: #f59e0b; /* Amber 500 */
+            --text-dark: #1e293b; /* Slate 800 */
+            --text-light: #f8fafc; /* Slate 50 */
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--secondary-color);
+        }
+        .sidebar {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+        .tab-link {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        .tab-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-left-color: var(--accent-color);
+        }
+        .tab-active {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            font-weight: 600;
+            border-left-color: var(--primary-color);
+        }
+        .tab-active:hover {
+            background-color: var(--accent-color);
+            border-left-color: var(--primary-color);
+        }
+        .content-panel {
+            display: none;
+        }
+        .content-active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+        .btn-primary:hover {
+            background-color: #283593; /* Darker Indigo */
+        }
+        .info-box {
+            border-left: 4px solid var(--accent-color);
+            background-color: #fffbeb; /* Amber 50 */
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flex flex-col md:flex-row min-h-screen">
+        <!-- Sidebar Navigation -->
+        <aside class="w-full md:w-72 sidebar flex-shrink-0">
+            <div class="p-6 text-center">
+                <h1 class="text-3xl font-bold">Portal Modul ASK</h1>
+                <p class="text-sm text-slate-300 mt-1">Jabatan Pendidikan Negeri Pahang</p>
+            </div>
+            <nav class="mt-4">
+                <ul>
+                    <li><a href="#" class="tab-link block py-3 px-6 tab-active" data-tab="pengenalan">Pengenalan</a></li>
+                    <li><a href="#" class="tab-link block py-3 px-6" data-tab="html">Modul HTML</a></li>
+                    <li><a href="#" class="tab-link block py-3 px-6" data-tab="python">Modul Python</a></li>
+                    <li><a href="#" class="tab-link block py-3 px-6" data-tab="scratch">Tutorial Scratch</a></li>
+                    <li><a href="#" class="tab-link block py-3 px-6" data-tab="struktur-kawalan">Nota Struktur Kawalan</a></li>
+                    <li><a href="#" class="tab-link block py-3 px-6" data-tab="bahan-modul">Bahan Modul</a></li>
+                    <li><a href="#" class="tab-link block py-3 px-6" data-tab="penghargaan">Penghargaan</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-4 md:p-8 overflow-y-auto flex flex-col">
+            <div class="flex-grow">
+                <!-- Pengenalan Content -->
+                <div id="pengenalan" class="content-panel content-active card">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-800">Selamat Datang ke Portal Modul ASK</h2>
+                    <p class="text-gray-600 mb-6">Portal ini dibangunkan sebagai inisiatif Jurulatih Utama (JU) Negeri dan Daerah Pahang untuk membantu guru-guru Asas Sains Komputer (ASK) dalam pengajaran, terutamanya bagi topik yang melibatkan aplikasi dan pengaturcaraan.</p>
+                    <div class="bg-gray-100 p-4 rounded-lg text-center">
+                        <video class="rounded-md mx-auto shadow-lg w-full max-w-3xl" controls autoplay loop muted>
+                            <source src="assets/video-pengenalan.mp4" type="video/mp4">
+                            Pelayar anda tidak menyokong tag video.
+                        </video>
+                        <p class="text-sm text-gray-500 mt-2">Pastikan fail video 'video-pengenalan.mp4' berada dalam folder 'assets'.</p>
+                    </div>
+                    <p class="mt-6 text-gray-600">Dengan adanya bahan-bahan yang disusun rapi di sini, kami berharap ia dapat menjadi sumber rujukan yang berguna dan memudahkan proses pengajaran dan pembelajaran (PdP) di dalam kelas. Selamat meneroka!</p>
+                </div>
+
+                <!-- Generic Module Template -->
+                <div id="html" class="content-panel card"></div>
+                <div id="python" class="content-panel card"></div>
+                <div id="scratch" class="content-panel card"></div>
+                <div id="struktur-kawalan" class="content-panel card"></div>
+
+                <!-- Bahan Modul Content -->
+                <div id="bahan-modul" class="content-panel card">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">Bahan Modul & Contoh Fail</h2>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- Modul Pembelajaran Box -->
+                        <div class="border border-gray-200 p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold mb-4 text-center text-primary-color">Modul Pembelajaran</h3>
+                            <div class="space-y-4">
+                                <a href="#" class="btn btn-primary w-full"><i class="fas fa-code mr-3"></i>Muat Turun Modul HTML</a>
+                                <a href="#" class="btn btn-primary w-full"><i class="fab fa-python mr-3"></i>Muat Turun Modul Python</a>
+                                <a href="#" class="btn btn-primary w-full"><i class="fas fa-cat mr-3"></i>Muat Turun Modul Scratch</a>
+                                <a href="#" class="btn btn-primary w-full"><i class="fas fa-sitemap mr-3"></i>Muat Turun Nota Struktur Kawalan</a>
+                            </div>
+                        </div>
+                        <!-- Contoh Fail Scratch Box -->
+                        <div class="border border-gray-200 p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold mb-4 text-center text-primary-color">Contoh Fail Latihan Scratch</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <a href="#" class="btn btn-primary"><i class="fas fa-download mr-2"></i>Latihan 1</a>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-download mr-2"></i>Latihan 2</a>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-download mr-2"></i>Latihan 3</a>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-download mr-2"></i>Latihan 4</a>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-download mr-2"></i>Latihan 5</a>
+                                <a href="#" class="btn btn-primary"><i class="fas fa-download mr-2"></i>Latihan 6</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Acknowledgements Content -->
+                <div id="penghargaan" class="content-panel card">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-800">Penghargaan</h2>
+                    <p class="text-gray-600">Setinggi-tinggi penghargaan dan terima kasih diucapkan kepada semua Jurulatih Utama (JU) Asas Sains Komputer (ASK) Negeri dan Daerah Pahang yang telah bertungkus-lumus menyediakan bahan-bahan pengajaran ini.</p>
+                    <p class="mt-4 text-gray-600">Semoga usaha murni ini dapat memberi manfaat yang besar kepada semua guru dan pelajar dalam memperkasakan pendidikan Sains Komputer di negeri Pahang.</p>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <footer class="text-center mt-8 py-4 border-t border-slate-300">
+                <p class="text-red-600 italic text-[10px] md:text-xs">Semua kandungan di laman web ini adalah hak milik dan hanya untuk tujuan pendidikan; sebarang penyebaran atau penggunaan komersial tanpa izin adalah dilarang.</p>
+                <p class="text-slate-500 text-xs md:text-sm mt-1">TMK © 2025 || Sektor Pembelajaran || JPN Pahang</p>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        const modules = {
+            html: {
+                title: 'Modul Pembangunan Laman Web HTML',
+                summary: 'HTML ialah bahasa penanda standard untuk mencipta halaman web. Ia menerangkan struktur halaman web menggunakan elemen yang diwakili oleh tag. Ia adalah tulang belakang kepada setiap laman web yang anda lawati.',
+                objective: 'Mempelajari cara menggunakan tag asas HTML seperti `<head>`, `<body>`, `<h1>`, `<p>`, `<img>`, dan `<a>` untuk menyusun halaman web ringkas yang mengandungi teks, imej dan pautan.',
+                analogy: 'Membina laman web dengan HTML adalah seperti membina rangka rumah. HTML menyediakan struktur asas (dinding, bumbung, pintu), manakala teknologi lain seperti CSS (cat dan perabot) menjadikannya kelihatan menarik.',
+                guide: 'Mulakan dengan templat asas (`<!DOCTYPE html>...`), tambah kandungan di dalam tag `<body>`, dan simpan fail dengan sambungan `.html` untuk melihatnya dalam pelayar web. Cuba ubah suai kandungan untuk melihat kesannya secara langsung.',
+                fileUrl: '#' // Replace with your Google Drive link for HTML PDF
+            },
+            python: {
+                title: 'Modul Pengaturcaraan Python',
+                summary: 'Python ialah bahasa pengaturcaraan tahap tinggi yang terkenal dengan sintaksnya yang ringkas, menjadikannya bagus untuk pemula. Ia digunakan secara meluas untuk pembangunan web, sains data, automasi dan banyak lagi.',
+                objective: 'Memahami pembolehubah, jenis data dan struktur kawalan (pilihan dan ulangan) untuk menulis atur cara ringkas yang boleh membuat keputusan dan melaksanakan tugasan berulang.',
+                analogy: 'Belajar Python adalah seperti belajar resipi. Anda mempunyai bahan-bahan (pembolehubah, data), dan satu set arahan (kod) yang anda ikuti langkah demi langkah untuk mendapatkan hidangan akhir (output program).',
+                guide: 'Gunakan editor dalam talian atau pasang Python secara tempatan. Tulis kod dalam fail yang berakhir dengan `.py`. Fokus pada pemahaman aliran kawalan dan cara menyelesaikan masalah secara logik sebelum menulis kod.',
+                fileUrl: '#' // Replace with your Google Drive link for Python PDF
+            },
+            scratch: {
+                title: 'Tutorial Penuh Scratch',
+                summary: 'Scratch ialah bahasa pengaturcaraan visual di mana anda menyusun blok untuk mencipta atur cara, seperti permainan dan animasi. Ia direka untuk menjadi seronok, mendidik, dan mudah diakses oleh semua.',
+                objective: 'Mempelajari asas logik pengaturcaraan, seperti jujukan, gelung, dan bersyarat, dalam persekitaran visual dan interaktif tanpa perlu risau tentang sintaks yang kompleks.',
+                analogy: 'Menggunakan Scratch adalah seperti bermain dengan blok LEGO. Setiap blok mempunyai fungsi tertentu, dan anda menggabungkannya dalam pelbagai cara untuk membina ciptaan yang kompleks. Tiada cara yang "salah" untuk bermula!',
+                guide: 'Layari laman web Scratch. Seret blok dari palet ke kawasan skrip. Eksperimen dengan menggabungkan blok yang berbeza untuk melihat apa yang berlaku. Klik bendera hijau untuk menjalankan projek anda.',
+                fileUrl: '#' // Replace with your Google Drive link for Scratch PDF
+            },
+            'struktur-kawalan': {
+                title: 'Nota Struktur Kawalan',
+                summary: 'Struktur kawalan adalah blok binaan asas bagi algoritma. Ia mengarahkan aliran pelaksanaan sesuatu atur cara. Jenis utama ialah Jujukan (Sequence), Pilihan (Selection), dan Ulangan (Repetition).',
+                objective: 'Belajar untuk mengenal pasti dan menggunakan struktur jujukan, pilihan (if, if-else), dan ulangan (for, while) untuk mencipta atur cara yang boleh mengendalikan senario dan data yang berbeza dengan cekap.',
+                analogy: 'Struktur kawalan adalah seperti isyarat lalu lintas untuk atur cara anda. Jujukan ialah lampu hijau (terus jalan). Pilihan ialah simpang jalan (pilih kiri atau kanan berdasarkan papan tanda). Ulangan ialah bulatan (pusing sehingga anda sampai ke simpang keluar).',
+                guide: 'Visualisasikan masalah dengan carta alir terlebih dahulu. Ini membantu dalam memilih struktur kawalan yang betul sama ada anda perlu membuat pilihan atau mengulangi sesuatu tindakan.',
+                fileUrl: '#' // Replace with your Google Drive link for Control Structure PDF
+            }
+        };
+
+        function createModuleContent(key) {
+            const module = modules[key];
+            const container = document.getElementById(key);
+            container.innerHTML = `
+                <h2 class="text-3xl font-bold mb-2 text-gray-800">${module.title}</h2>
+                <hr class="mb-6">
+
+                <div class="info-box">
+                    <h3 class="font-bold text-lg mb-2 text-gray-700">Ringkasan</h3>
+                    <p class="text-gray-600">${module.summary}</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="info-box">
+                        <h3 class="font-bold text-lg mb-2 text-gray-700">Objektif Pembelajaran</h3>
+                        <p class="text-gray-600">${module.objective}</p>
+                    </div>
+                    <div class="info-box">
+                        <h3 class="font-bold text-lg mb-2 text-gray-700">Analogi</h3>
+                        <p class="text-gray-600">${module.analogy}</p>
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <h3 class="font-bold text-lg mb-2 text-gray-700">Panduan Penggunaan</h3>
+                    <p class="text-gray-600">${module.guide}</p>
+                </div>
+
+                <div class="text-center mt-8">
+                    <a href="${module.fileUrl}" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-file-pdf mr-3"></i> Buka Fail Penuh Modul
+                    </a>
+                    <p class="text-sm text-gray-500 mt-2">Sila gantikan pautan butang ini dengan URL Google Drive anda.</p>
+                </div>
+            `;
+        }
+
+        // Generate content for all modules
+        Object.keys(modules).forEach(createModuleContent);
+
+        // Tab functionality
+        const tabLinks = document.querySelectorAll('.tab-link');
+        const contentPanels = document.querySelectorAll('.content-panel');
+
+        tabLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const tab = link.getAttribute('data-tab');
+                
+                tabLinks.forEach(item => item.classList.remove('tab-active'));
+                contentPanels.forEach(panel => panel.classList.remove('content-active'));
+
+                link.classList.add('tab-active');
+                document.getElementById(tab).classList.add('content-active');
+            });
+        });
+    </script>
+
+</body>
+</html>
